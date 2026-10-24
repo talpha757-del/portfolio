@@ -101,11 +101,11 @@
       "menu": "Expériences",
       "visible": true,
       "label": "Expériences",
-      "title": "Ce que je fais en ce moment, et ce que j'ai fait.",
-      "initial": 4,
+      "title": "Les marques et les projets que j'ai accompagnés.",
+      "initial": 3,
       "items": [
         {
-          "current": true,
+          "current": false,
           "period": "2025 – 2026",
           "category": "Stratégie digitale",
           "role": "Chargé de communication digitale",
@@ -120,7 +120,7 @@
           ]
         },
         {
-          "current": true,
+          "current": false,
           "period": "2025 – 2026",
           "category": "Événementiel",
           "role": "Communication événementielle",
@@ -135,7 +135,7 @@
           ]
         },
         {
-          "current": true,
+          "current": false,
           "period": "2025 – 2026",
           "category": "Community management",
           "role": "Community manager",
@@ -540,7 +540,8 @@
         }
       ],
       "pages_title": "Les pages que j'ai gérées",
-      "pages": []
+      "pages": [],
+      "logos_initial": 4
     },
     {
       "type": "cartes",
