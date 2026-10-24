@@ -251,7 +251,10 @@
       "whatsapp": "2250142220269",
       "button_label": "Parlons de votre marque",
       "whatsapp_label": "Écrire sur WhatsApp",
-      "socials": []
+      "socials": [
+        { "name": "Facebook", "url": "https://www.facebook.com/alpha.traore.555714", "display": "Alpha Traoré" },
+        { "name": "TikTok", "url": "https://www.tiktok.com/@traore_alpha_yaya", "display": "@traore_alpha_yaya" }
+      ]
     }
   ]
 }
