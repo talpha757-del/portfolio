@@ -131,6 +131,9 @@ p,li{max-width:72ch}
 .exp__period{font-weight:500;color:var(--ink-muted)}
 .exp__company{font-weight:700;color:var(--terracotta-texte)}
 .exp__body ul{margin:4px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.exp__details summary{cursor:pointer;font-weight:600;color:var(--terracotta-texte);list-style-position:inside}
+.exp__details[open] summary{margin-bottom:8px}
+.exp{padding:24px 0}
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:var(--ink);padding:6px 14px;border-radius:var(--r-pill);font-size:13px;font-weight:700}
 .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--terracotta-texte)}
 

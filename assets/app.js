@@ -140,21 +140,32 @@
   lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.close(); });
 
   /* ---------- Pagination "Voir plus" ---------- */
+  /* Affiche les premiers éléments ; le bouton déroule le reste, puis permet de replier. */
   function paged(container, items, render, initial, step, word) {
-    var shown = 0;
     var moreWrap = h('div', { class: 'more' });
-    var btn = h('button', { type: 'button', class: 'btn btn--outline' });
+    var btn = h('button', { type: 'button', class: 'btn btn--outline', 'aria-expanded': 'false' });
     moreWrap.appendChild(btn);
-    function next() {
-      var end = Math.min(items.length, shown + (shown === 0 ? initial : step));
-      for (var i = shown; i < end; i++) container.appendChild(render(items[i], i));
-      shown = end;
-      var left = items.length - shown;
-      btn.textContent = 'Voir plus de ' + word + ' (' + left + ')';
-      moreWrap.hidden = left <= 0;
+    var els = [];
+    var left = Math.max(0, items.length - initial);
+    var open = false;
+    function apply() {
+      for (var i = initial; i < els.length; i++) els[i].hidden = !open;
+      btn.textContent = open ? 'Voir moins' : 'Voir tout (' + left + ' ' + word + ' de plus)';
+      btn.setAttribute('aria-expanded', String(open));
     }
-    btn.addEventListener('click', next);
-    next();
+    items.forEach(function (it, i) {
+      if (i < initial) { var el = render(it, i); els.push(el); container.appendChild(el); }
+    });
+    btn.addEventListener('click', function () {
+      if (els.length < items.length) {
+        for (var i = els.length; i < items.length; i++) { var el = render(items[i], i); els.push(el); container.appendChild(el); }
+      }
+      open = !open;
+      apply();
+      if (!open) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    moreWrap.hidden = left <= 0;
+    apply();
     return moreWrap;
   }
 
@@ -227,46 +238,27 @@
   R.experiences = function (s) {
     var items = list(s.items);
     if (!items.length) return null;
-    var cats = [];
-    items.forEach(function (e) { if (has(e.category) && cats.indexOf(e.category) < 0) cats.push(e.category); });
     var listBox = h('div', { class: 'exp-list' });
-    var moreSlot = h('div');
-    var current = null;
     function renderExp(e) {
+      var details = (list(e.points).length || has(e.description)) ? h('details', { class: 'exp__details' }, [
+        h('summary', { text: 'Voir le détail' }),
+        list(e.points).length ? h('ul', null, list(e.points).map(function (p) { return h('li', { text: p.text || '' }); })) : null,
+        paragraphs(e.description, 'muted')
+      ]) : null;
       return h('article', { class: 'exp' }, [
         h('div', { class: 'exp__meta' }, [
-          e.current ? h('span', { class: 'badge', text: 'En cours' }) : null,
-          has(e.period) ? h('span', { class: 'exp__period', text: e.period }) : null,
-          has(e.category) ? h('span', { class: 'label label--or', text: e.category }) : null
+          has(e.period) ? h('span', { class: 'exp__period', text: e.period }) : null
         ]),
         h('div', { class: 'exp__body' }, [
           h('h3', { class: 'h3', text: e.role || '' }),
           has(e.company) ? h('span', { class: 'exp__company', text: e.company }) : null,
-          list(e.points).length ? h('ul', null, list(e.points).map(function (p) { return h('li', { text: p.text || '' }); })) : null,
-          paragraphs(e.description, 'muted')
+          details
         ])
       ]);
     }
-    function show(cat) {
-      current = cat;
-      listBox.textContent = '';
-      moreSlot.textContent = '';
-      var filtered = items.filter(function (e) { return !cat || e.category === cat; });
-      var n = parseInt(s.initial, 10) || 4;
-      moreSlot.appendChild(paged(listBox, filtered, renderExp, n, n, 'expériences'));
-      filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b._cat === cat)); });
-    }
-    var filterBtns = [];
-    var filters = null;
-    if (cats.length > 1) {
-      filters = h('div', { class: 'filters', role: 'group', 'aria-label': 'Filtrer les expériences' });
-      [null].concat(cats).forEach(function (c) {
-        var b = h('button', { type: 'button', class: 'filter', text: c || 'Toutes', onclick: function () { show(c); } });
-        b._cat = c; filterBtns.push(b); filters.appendChild(b);
-      });
-    }
-    show(null);
-    return section(s, 'section--raised', [head(s, filters), listBox, moreSlot]);
+    var n = parseInt(s.initial, 10) || 3;
+    var moreSlot = paged(listBox, items, renderExp, n, n, 'expériences');
+    return section(s, 'section--raised', [head(s), listBox, moreSlot]);
   };
 
   R.projets = function (s) {
@@ -316,16 +308,16 @@
     if (videos.length) groups.push({ key: 'videos', title: s.videos_title || 'Vidéos', build: function (box) {
       var vert = videos.filter(function (v) { return v._fmt === 'vertical'; });
       var hori = videos.filter(function (v) { return v._fmt !== 'vertical'; });
-      if (vert.length) { var g1 = h('div', { class: 'grid grid--v' }); box.appendChild(g1); box.appendChild(paged(g1, vert, videoTile, 8, 8, 'vidéos')); }
-      if (hori.length) { var g2 = h('div', { class: 'grid grid--h', style: vert.length ? 'margin-top:32px' : null }); box.appendChild(g2); box.appendChild(paged(g2, hori, videoTile, 4, 4, 'vidéos')); }
+      if (vert.length) { var g1 = h('div', { class: 'grid grid--v' }); box.appendChild(g1); box.appendChild(paged(g1, vert, videoTile, 3, 3, 'vidéos')); }
+      if (hori.length) { var g2 = h('div', { class: 'grid grid--h', style: vert.length ? 'margin-top:32px' : null }); box.appendChild(g2); box.appendChild(paged(g2, hori, videoTile, 3, 3, 'vidéos')); }
     } });
     if (visuels.length) groups.push({ key: 'visuels', title: s.visuels_title || 'Visuels', build: function (box) {
       var g = h('div', { class: 'grid grid--img' }); box.appendChild(g);
-      box.appendChild(paged(g, visuels, function (v) { return imageTile(v, 'img'); }, 8, 8, 'visuels'));
+      box.appendChild(paged(g, visuels, function (v) { return imageTile(v, 'img'); }, 3, 3, 'visuels'));
     } });
     if (captures.length) groups.push({ key: 'captures', title: s.captures_title || 'Captures d’écran', build: function (box) {
       var g = h('div', { class: 'grid grid--cap' }); box.appendChild(g);
-      box.appendChild(paged(g, captures, function (v) { return imageTile(v, 'cap'); }, 6, 6, 'captures'));
+      box.appendChild(paged(g, captures, function (v) { return imageTile(v, 'cap'); }, 3, 3, 'pages'));
     } });
     if (!groups.length) return null;
 
@@ -357,11 +349,13 @@
     if (!logos.length && !pages.length) return null;
     var content = [head(s)];
     if (logos.length) {
-      content.push(h('div', { class: 'logos' }, logos.map(function (l) {
+      var logoBox = h('div', { class: 'logos' });
+      content.push(logoBox);
+      content.push(paged(logoBox, logos, function (l) {
         var inner = has(l.image) ? h('img', { src: l.image, alt: l.name || '', loading: 'lazy' }) : (l.name || '');
         var cls = 'logo-tile' + (has(l.image) ? ' logo-tile--img' : '');
         return has(l.link) ? h('a', { class: cls, href: l.link, target: '_blank', rel: 'noopener', title: l.name || null }, inner) : h('div', { class: cls, title: l.name || null }, inner);
-      })));
+      }, parseInt(s.logos_initial, 10) || 4, 4, 'références'));
     }
     if (pages.length) {
       if (has(s.pages_title)) content.push(h('h3', { class: 'h3', style: 'margin-top:56px;font-size:28px', text: s.pages_title }));
