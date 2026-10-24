@@ -1,0 +1,39 @@
+PORTFOLIO ALPHA YAYA TRAORÉ
+===========================
+
+Ce qu'il y a dans ce dossier
+- index.html ............ la page du site
+- assets/ ................ le style (style.css) et le moteur de la page (app.js)
+- content/site.json ...... TOUT le contenu du site (textes, sections, vidéos, expériences…)
+- images/ ................ logos, favicon et images ajoutées (images/uploads)
+- admin/ ................. ton espace admin (adresse : ton-site/admin)
+- netlify.toml ........... réglages pour l'hébergement Netlify
+
+Tu n'as pas besoin de toucher aux fichiers : tout se modifie depuis l'espace admin.
+
+MISE EN LIGNE (une seule fois)
+1. GitHub : crée un compte sur github.com, puis un nouveau dépôt nommé « portfolio ».
+   Choisis « uploading an existing file » et glisse TOUT le contenu de ce dossier
+   (pas le dossier lui-même). Clique sur « Commit changes ».
+2. Netlify : crée un compte sur netlify.com avec « Sign up with GitHub ».
+   « Add new project » > « Import an existing project » > GitHub > choisis « portfolio » > « Deploy ».
+   Netlify te donne un lien. Tu peux changer le nom dans « Project configuration » > « Change project name ».
+3. Sur GitHub, ouvre admin/config.yml, clique sur le crayon et remplace
+   TON-PSEUDO-GITHUB/portfolio par ton pseudo GitHub suivi de /portfolio. Enregistre.
+4. Sur GitHub : Settings > Developer settings > OAuth Apps > New OAuth App.
+   - Homepage URL : le lien Netlify de ton site
+   - Authorization callback URL : https://api.netlify.com/auth/done
+   Crée l'application, puis « Generate a new client secret ». Garde l'ID et le secret.
+5. Sur Netlify : « Project configuration » > « Access & security » > « OAuth » >
+   « Install provider » > GitHub. Colle l'ID et le secret.
+6. Va sur ton-site.netlify.app/admin et clique « Se connecter avec GitHub ». C'est prêt.
+
+AJOUTER UNE VIDÉO
+Admin > Sections de la page > Projets > Vidéos > Ajouter. Colle le lien YouTube.
+Un Short s'affiche en vertical tout seul ; une vidéo normale en horizontal.
+La vidéo doit être « publique » ou « non répertoriée » (pas « privée »).
+
+MASQUER UNE SECTION
+Ouvre la section et décoche « Visible sur le site ». Son contenu est gardé.
+
+Après chaque « Publier », le site se met à jour en environ 1 minute.

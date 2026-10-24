@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alpha Yaya Traoré · Community manager à Abidjan</title>
+<meta name="description" content="Community management, création de contenu et stratégie réseaux sociaux pour les entrepreneurs, les entreprises et les institutions.">
+<meta property="og:title" content="Alpha Yaya Traoré · Community manager">
+<meta property="og:description" content="On parle de vous, à vos clients.">
+<meta property="og:image" content="/images/uploads/alpha-portrait.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1A1410">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Navigation principale">
+    <a class="brand" href="#accueil">
+      <img src="/images/logo-fond-clair.svg" alt="" width="48" height="48">
+      <span class="brand__text">
+        <span class="brand__name" data-bind="name">Alpha Yaya Traoré</span>
+        <span class="brand__sub" data-bind="tagline">Social media</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr-only">Ouvrir le menu</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="nav__menu" id="menu">
+      <ul class="nav__links" id="nav-links"></ul>
+      <a class="btn btn--deep" id="nav-cta" href="#contact">Me contacter</a>
+    </div>
+  </nav>
+</header>
+
+<main id="contenu">
+  <div id="app" aria-live="polite"></div>
+  <noscript><p class="wrap" style="padding:48px 24px">Ce site a besoin de JavaScript pour s'afficher.</p></noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer__inner">
+    <span class="footer__brand">
+      <img src="/images/logo-fond-sombre.svg" alt="" width="32" height="32">
+      <span>© <span id="year"></span> <span data-bind="name">Alpha Yaya Traoré</span></span>
+    </span>
+    <span class="footer__slogan" data-bind="footer_text">On parle de vous, à vos clients.</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image agrandie">
+  <button class="lightbox__close" type="button" aria-label="Fermer">
+    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img alt="">
+</dialog>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>
