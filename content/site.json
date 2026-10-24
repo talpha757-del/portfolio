@@ -230,7 +230,106 @@
       "visuels_title": "Visuels",
       "visuels": [],
       "captures_title": "Captures d'écran",
-      "captures": []
+      "captures": [
+        {
+          "image": "/images/uploads/capture-astv.webp",
+          "title": "Africa Start-up TV",
+          "client": "Page Facebook",
+          "points": [
+            {
+              "label": "Abonnés de la page",
+              "value": "380 K"
+            },
+            {
+              "label": "Période",
+              "value": "2022 – 2023"
+            }
+          ],
+          "comment": "Gestion des réseaux sociaux de la chaîne : reportages, interviews et montages vidéo.",
+          "alt": "Capture de la page Facebook Africa Start-up TV"
+        },
+        {
+          "image": "/images/uploads/capture-startup-academy.jpg",
+          "title": "Startup Academy Côte d'Ivoire",
+          "client": "Page Facebook",
+          "points": [
+            {
+              "label": "Abonnés de la page",
+              "value": "134 K"
+            },
+            {
+              "label": "Période",
+              "value": "2023 – 2024"
+            }
+          ],
+          "comment": "Animation de la page, sponsoring et promotion des formations.",
+          "alt": "Capture de la page Facebook Startup Academy Côte d'Ivoire"
+        },
+        {
+          "image": "/images/uploads/capture-ig-ivory-collection.webp",
+          "title": "The Ivory Collection",
+          "client": "Compte Instagram",
+          "points": [
+            {
+              "label": "Abonnés",
+              "value": "4 489"
+            },
+            {
+              "label": "Publications",
+              "value": "278"
+            }
+          ],
+          "comment": "Conciergerie et villas de luxe : création et publication des contenus du compte.",
+          "alt": "Capture du compte Instagram The Ivory Collection"
+        },
+        {
+          "image": "/images/uploads/capture-ig-hbfs-training.webp",
+          "title": "HBFS Training",
+          "client": "Compte Instagram",
+          "points": [
+            {
+              "label": "Abonnés",
+              "value": "1 316"
+            },
+            {
+              "label": "Publications",
+              "value": "259"
+            }
+          ],
+          "comment": "Centre de formation en hôtellerie-restauration : visuels de recrutement, portage salarial et formations.",
+          "alt": "Capture du compte Instagram HBFS Training"
+        },
+        {
+          "image": "/images/uploads/capture-ig-hbfs-consulting.webp",
+          "title": "HBFS Consulting",
+          "client": "Compte Instagram",
+          "points": [
+            {
+              "label": "Abonnés",
+              "value": "628"
+            },
+            {
+              "label": "Publications",
+              "value": "62"
+            }
+          ],
+          "comment": "Cabinet de conseil en hôtellerie : contenus sur les services, l'audit et le recrutement.",
+          "alt": "Capture du compte Instagram HBFS Consulting"
+        },
+        {
+          "image": "/images/uploads/capture-ivory-collection.jpg",
+          "title": "The Ivory Collection",
+          "client": "Page Facebook",
+          "points": [
+            {
+              "label": "Abonnés de la page",
+              "value": "426"
+            }
+          ],
+          "comment": "Gestion de la page Facebook de la conciergerie.",
+          "alt": "Capture de la page Facebook The Ivory Collection"
+        }
+      ]
     },
     {
       "type": "references",
