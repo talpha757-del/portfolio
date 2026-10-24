@@ -229,7 +229,7 @@
       "videos": [],
       "visuels_title": "Visuels",
       "visuels": [],
-      "captures_title": "Quelques résultats obtenus",
+      "captures_title": "Pages que j'ai gérées",
       "captures": [
         {
           "image": "/images/uploads/capture-bouhari-bm.webp",
@@ -403,77 +403,7 @@
         }
       ],
       "pages_title": "Les pages que j'ai gérées",
-      "pages": [
-        {
-          "name": "HBFS Training",
-          "logo": "/images/uploads/logo-hbfs-training.jpg",
-          "period": "2025 – 2026 · en cours",
-          "description": "Contenus qui valorisent les établissements hôteliers et les restaurants.",
-          "networks": [
-            {
-              "name": "Facebook"
-            },
-            {
-              "name": "TikTok"
-            },
-            {
-              "name": "Instagram"
-            },
-            {
-              "name": "LinkedIn"
-            }
-          ],
-          "link": ""
-        },
-        {
-          "name": "Africa Start-up TV",
-          "logo": "/images/uploads/logo-astv.jpg",
-          "period": "2022 – 2023",
-          "description": "Gestion des réseaux, reportages, interviews et montages vidéo.",
-          "networks": [
-            {
-              "name": "Facebook"
-            },
-            {
-              "name": "TikTok"
-            },
-            {
-              "name": "YouTube"
-            },
-            {
-              "name": "Instagram"
-            }
-          ],
-          "link": ""
-        },
-        {
-          "name": "Startup Academy Côte d'Ivoire",
-          "logo": "/images/uploads/logo-startup-academy.jpg",
-          "period": "2023 – 2024",
-          "description": "Animation de la page, sponsoring et promotion des formations.",
-          "networks": [
-            {
-              "name": "Facebook"
-            }
-          ],
-          "link": ""
-        },
-        {
-          "name": "Afrikpreneur",
-          "logo": "/images/uploads/logo-afrikpreneur.jpg",
-          "period": "2024 – 2025",
-          "description": "Lancement de la marque : contenus et spots vidéo promotionnels.",
-          "networks": [
-            {
-              "name": "Facebook"
-            },
-            {
-              "name": "TikTok"
-            }
-          ],
-          "link": ""
-        }
-      ]
+      "pages": []
     },
     {
       "type": "cartes",
