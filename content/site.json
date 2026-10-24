@@ -232,6 +232,23 @@
       "captures_title": "Quelques résultats obtenus",
       "captures": [
         {
+          "image": "/images/uploads/capture-bouhari-bm.webp",
+          "title": "Bouhari BM",
+          "client": "Page Facebook",
+          "points": [
+            {
+              "label": "Abonnés de la page",
+              "value": "8,9 K"
+            },
+            {
+              "label": "Période",
+              "value": "2026"
+            }
+          ],
+          "comment": "Gestion de la page du fondateur de POSSA : création de contenu, branding personnel, promotion de ses formations en cryptomonnaie et de POSSA.",
+          "alt": "Capture de la page Facebook Bouhari BM"
+        },
+        {
           "image": "/images/uploads/capture-astv.webp",
           "title": "Africa Start-up TV",
           "client": "Page Facebook",
