@@ -359,7 +359,8 @@
     if (logos.length) {
       content.push(h('div', { class: 'logos' }, logos.map(function (l) {
         var inner = has(l.image) ? h('img', { src: l.image, alt: l.name || '', loading: 'lazy' }) : (l.name || '');
-        return has(l.link) ? h('a', { class: 'logo-tile', href: l.link, target: '_blank', rel: 'noopener' }, inner) : h('div', { class: 'logo-tile' }, inner);
+        var cls = 'logo-tile' + (has(l.image) ? ' logo-tile--img' : '');
+        return has(l.link) ? h('a', { class: cls, href: l.link, target: '_blank', rel: 'noopener', title: l.name || null }, inner) : h('div', { class: cls, title: l.name || null }, inner);
       })));
     }
     if (pages.length) {
