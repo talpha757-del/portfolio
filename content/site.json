@@ -45,23 +45,52 @@
       "title": "Avant de publier, je comprends votre environnement.",
       "text": "Je suis community manager à Abidjan, diplômé d'une licence en communication des organisations. Depuis 2022, j'accompagne des startups, des écoles, des marques et des événements : gestion des réseaux sociaux, création de contenus, vidéos et stratégie digitale.\n\nMon approche, c'est le miroir : chaque contenu parle de votre cible, avec ses mots, pour qu'elle se sente directement concernée.",
       "values": [
-        { "title": "L'écoute", "text": "Comprendre avant de parler." },
-        { "title": "La justesse", "text": "Le bon message à la bonne personne." },
-        { "title": "L'excellence", "text": "Un rendu premium sur chaque support." }
+        {
+          "title": "L'écoute",
+          "text": "Comprendre avant de parler."
+        },
+        {
+          "title": "La justesse",
+          "text": "Le bon message à la bonne personne."
+        },
+        {
+          "title": "L'excellence",
+          "text": "Un rendu premium sur chaque support."
+        }
       ],
       "formation_title": "Formation",
       "formation": [
-        { "year": "2026", "text": "Formation en création publicitaire avec l'IA" },
-        { "year": "2025", "text": "Licence en communication des organisations" },
-        { "year": "2024", "text": "Certification en marketing de contenu" },
-        { "year": "2021", "text": "Baccalauréat, série littéraire" }
+        {
+          "year": "2026",
+          "text": "Formation en création publicitaire avec l'IA"
+        },
+        {
+          "year": "2025",
+          "text": "Licence en communication des organisations"
+        },
+        {
+          "year": "2024",
+          "text": "Certification en marketing de contenu"
+        },
+        {
+          "year": "2021",
+          "text": "Baccalauréat, série littéraire"
+        }
       ],
       "tools_title": "Outils",
       "tools": [
-        { "name": "Premiere Pro" },
-        { "name": "CapCut" },
-        { "name": "Canva" },
-        { "name": "Bureautique" }
+        {
+          "name": "Premiere Pro"
+        },
+        {
+          "name": "CapCut"
+        },
+        {
+          "name": "Canva"
+        },
+        {
+          "name": "Bureautique"
+        }
       ],
       "languages_title": "Langues",
       "languages": "Français, anglais"
@@ -82,8 +111,12 @@
           "role": "Chargé de communication digitale",
           "company": "Startup POSSA",
           "points": [
-            { "text": "Élaboration de stratégies de communication digitale." },
-            { "text": "Veille concurrentielle et suivi des indicateurs de performance (KPI)." }
+            {
+              "text": "Élaboration de stratégies de communication digitale."
+            },
+            {
+              "text": "Veille concurrentielle et suivi des indicateurs de performance (KPI)."
+            }
           ]
         },
         {
@@ -93,8 +126,12 @@
           "role": "Communication événementielle",
           "company": "Coupe des écoles hôtelières",
           "points": [
-            { "text": "Mise en œuvre d'une stratégie de communication événementielle." },
-            { "text": "Création de contenus pour valoriser l'événement." }
+            {
+              "text": "Mise en œuvre d'une stratégie de communication événementielle."
+            },
+            {
+              "text": "Création de contenus pour valoriser l'événement."
+            }
           ]
         },
         {
@@ -104,8 +141,12 @@
           "role": "Community manager",
           "company": "HBFS Training",
           "points": [
-            { "text": "Gestion des réseaux sociaux : Facebook, TikTok, Instagram et LinkedIn." },
-            { "text": "Création de contenus valorisant les établissements hôteliers et les restaurants." }
+            {
+              "text": "Gestion des réseaux sociaux : Facebook, TikTok, Instagram et LinkedIn."
+            },
+            {
+              "text": "Création de contenus valorisant les établissements hôteliers et les restaurants."
+            }
           ]
         },
         {
@@ -115,8 +156,12 @@
           "role": "Lancement de la marque",
           "company": "Afrikpreneur",
           "points": [
-            { "text": "Création de contenus pour Facebook et TikTok." },
-            { "text": "Réalisation de spots vidéo promotionnels." }
+            {
+              "text": "Création de contenus pour Facebook et TikTok."
+            },
+            {
+              "text": "Réalisation de spots vidéo promotionnels."
+            }
           ]
         },
         {
@@ -126,9 +171,15 @@
           "role": "Communication de l'événement",
           "company": "Journée entrepreneuriale 2024",
           "points": [
-            { "text": "Gestion de la communication avant, pendant et après l'événement." },
-            { "text": "Création de contenus pour Facebook et TikTok." },
-            { "text": "Réalisation de vidéos promotionnelles, de reportages et participation à la vente de billets." }
+            {
+              "text": "Gestion de la communication avant, pendant et après l'événement."
+            },
+            {
+              "text": "Création de contenus pour Facebook et TikTok."
+            },
+            {
+              "text": "Réalisation de vidéos promotionnelles, de reportages et participation à la vente de billets."
+            }
           ]
         },
         {
@@ -138,8 +189,12 @@
           "role": "Community manager",
           "company": "Startup Academy Côte d'Ivoire",
           "points": [
-            { "text": "Gestion et animation de la page Facebook." },
-            { "text": "Gestion du sponsoring et promotion des formations." }
+            {
+              "text": "Gestion et animation de la page Facebook."
+            },
+            {
+              "text": "Gestion du sponsoring et promotion des formations."
+            }
           ]
         },
         {
@@ -149,9 +204,15 @@
           "role": "Chargé de communication",
           "company": "Africa Start-up TV",
           "points": [
-            { "text": "Gestion des réseaux sociaux : Facebook, TikTok, YouTube et Instagram." },
-            { "text": "Réalisation de reportages, d'interviews et de montages vidéo." },
-            { "text": "Suivi des clients." }
+            {
+              "text": "Gestion des réseaux sociaux : Facebook, TikTok, YouTube et Instagram."
+            },
+            {
+              "text": "Réalisation de reportages, d'interviews et de montages vidéo."
+            },
+            {
+              "text": "Suivi des clients."
+            }
           ]
         }
       ]
@@ -179,46 +240,116 @@
       "label": "Ils m'ont fait confiance",
       "title": "Des marques qui ont choisi de parler à leurs clients.",
       "logos": [
-        { "name": "POSSA", "image": "", "link": "" },
-        { "name": "HBFS Training", "image": "", "link": "" },
-        { "name": "Coupe des écoles hôtelières", "image": "", "link": "" },
-        { "name": "Afrikpreneur", "image": "", "link": "" },
-        { "name": "Journée entrepreneuriale", "image": "", "link": "" },
-        { "name": "Startup Academy Côte d'Ivoire", "image": "", "link": "" },
-        { "name": "Africa Start-up TV", "image": "", "link": "" }
+        {
+          "name": "HBFS Training",
+          "image": "/images/uploads/logo-hbfs-training.jpg",
+          "link": ""
+        },
+        {
+          "name": "The Ivory Collection",
+          "image": "/images/uploads/logo-ivory-collection.jpg",
+          "link": ""
+        },
+        {
+          "name": "Afrikpreneur",
+          "image": "/images/uploads/logo-afrikpreneur.jpg",
+          "link": ""
+        },
+        {
+          "name": "Startup Academy Côte d'Ivoire",
+          "image": "/images/uploads/logo-startup-academy.jpg",
+          "link": ""
+        },
+        {
+          "name": "Africa Start-up TV",
+          "image": "/images/uploads/logo-astv.jpg",
+          "link": ""
+        },
+        {
+          "name": "POSSA",
+          "image": "",
+          "link": ""
+        },
+        {
+          "name": "Coupe des écoles hôtelières",
+          "image": "",
+          "link": ""
+        },
+        {
+          "name": "Journée entrepreneuriale",
+          "image": "",
+          "link": ""
+        }
       ],
       "pages_title": "Les pages que j'ai gérées",
       "pages": [
         {
           "name": "HBFS Training",
-          "logo": "",
+          "logo": "/images/uploads/logo-hbfs-training.jpg",
           "period": "2025 – 2026 · en cours",
           "description": "Contenus qui valorisent les établissements hôteliers et les restaurants.",
-          "networks": [{ "name": "Facebook" }, { "name": "TikTok" }, { "name": "Instagram" }, { "name": "LinkedIn" }],
+          "networks": [
+            {
+              "name": "Facebook"
+            },
+            {
+              "name": "TikTok"
+            },
+            {
+              "name": "Instagram"
+            },
+            {
+              "name": "LinkedIn"
+            }
+          ],
           "link": ""
         },
         {
           "name": "Africa Start-up TV",
-          "logo": "",
+          "logo": "/images/uploads/logo-astv.jpg",
           "period": "2022 – 2023",
           "description": "Gestion des réseaux, reportages, interviews et montages vidéo.",
-          "networks": [{ "name": "Facebook" }, { "name": "TikTok" }, { "name": "YouTube" }, { "name": "Instagram" }],
+          "networks": [
+            {
+              "name": "Facebook"
+            },
+            {
+              "name": "TikTok"
+            },
+            {
+              "name": "YouTube"
+            },
+            {
+              "name": "Instagram"
+            }
+          ],
           "link": ""
         },
         {
           "name": "Startup Academy Côte d'Ivoire",
-          "logo": "",
+          "logo": "/images/uploads/logo-startup-academy.jpg",
           "period": "2023 – 2024",
           "description": "Animation de la page, sponsoring et promotion des formations.",
-          "networks": [{ "name": "Facebook" }],
+          "networks": [
+            {
+              "name": "Facebook"
+            }
+          ],
           "link": ""
         },
         {
           "name": "Afrikpreneur",
-          "logo": "",
+          "logo": "/images/uploads/logo-afrikpreneur.jpg",
           "period": "2024 – 2025",
           "description": "Lancement de la marque : contenus et spots vidéo promotionnels.",
-          "networks": [{ "name": "Facebook" }, { "name": "TikTok" }],
+          "networks": [
+            {
+              "name": "Facebook"
+            },
+            {
+              "name": "TikTok"
+            }
+          ],
           "link": ""
         }
       ]
@@ -231,10 +362,26 @@
       "label": "Services",
       "title": "Vous ouvrez à 7 h, vous fermez à 22 h… et votre page dort ?",
       "items": [
-        { "icon": "message", "title": "Community management", "text": "J'anime vos pages et je réponds à votre communauté, pour qu'elle reste active." },
-        { "icon": "video", "title": "Création de contenu", "text": "Vidéos courtes, reportages, carrousels, visuels : des formats pensés pour votre cible." },
-        { "icon": "target", "title": "Stratégie réseaux sociaux", "text": "Le bon message, sur le bon réseau, au bon moment. Un plan clair, mois par mois." },
-        { "icon": "calendar", "title": "Communication événementielle", "text": "Avant, pendant et après votre événement : contenus, vidéos et reportages." }
+        {
+          "icon": "message",
+          "title": "Community management",
+          "text": "J'anime vos pages et je réponds à votre communauté, pour qu'elle reste active."
+        },
+        {
+          "icon": "video",
+          "title": "Création de contenu",
+          "text": "Vidéos courtes, reportages, carrousels, visuels : des formats pensés pour votre cible."
+        },
+        {
+          "icon": "target",
+          "title": "Stratégie réseaux sociaux",
+          "text": "Le bon message, sur le bon réseau, au bon moment. Un plan clair, mois par mois."
+        },
+        {
+          "icon": "calendar",
+          "title": "Communication événementielle",
+          "text": "Avant, pendant et après votre événement : contenus, vidéos et reportages."
+        }
       ]
     },
     {
@@ -252,8 +399,16 @@
       "button_label": "Parlons de votre marque",
       "whatsapp_label": "Écrire sur WhatsApp",
       "socials": [
-        { "name": "Facebook", "url": "https://www.facebook.com/alpha.traore.555714", "display": "Alpha Traoré" },
-        { "name": "TikTok", "url": "https://www.tiktok.com/@traore_alpha_yaya", "display": "@traore_alpha_yaya" }
+        {
+          "name": "Facebook",
+          "url": "https://www.facebook.com/alpha.traore.555714",
+          "display": "Alpha Traoré"
+        },
+        {
+          "name": "TikTok",
+          "url": "https://www.tiktok.com/@traore_alpha_yaya",
+          "display": "@traore_alpha_yaya"
+        }
       ]
     }
   ]
