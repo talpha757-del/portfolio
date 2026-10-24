@@ -219,10 +219,152 @@
     },
     {
       "type": "projets",
-      "id": "projets",
-      "menu": "Projets",
+      "id": "videos",
+      "menu": "Vidéos",
       "visible": true,
-      "label": "Projets",
+      "label": "Vidéos",
+      "title": "Des vidéos qui montrent, plutôt que de dire.",
+      "videos_title": "Vidéos réalisées",
+      "videos": [
+        {
+          "url": "https://youtube.com/shorts/CiuozGYwnNk",
+          "title": "Portage salarial",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/flRz7n7V_1w",
+          "title": "HBFS Training",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/v_W7z_-_lvs",
+          "title": "Formation – La Coupe des écoles hôtelières",
+          "client": "Coupe des écoles hôtelières"
+        },
+        {
+          "url": "https://youtube.com/shorts/Pd-MBMpYqnA",
+          "title": "La Coupe des écoles hôtelières",
+          "client": "Coupe des écoles hôtelières"
+        },
+        {
+          "url": "https://youtube.com/shorts/ZdH0VnZ7Ayk",
+          "title": "Recrutement de personnel",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/BxAfYZf2pfk",
+          "title": "Atelier cuisine",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/BhjDFc3__BI",
+          "title": "Journée portes ouvertes",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/FZwnQNz0ljk",
+          "title": "Interview",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/vKBF0fDk9dc",
+          "title": "FODESE",
+          "client": "HBFS Training"
+        },
+        {
+          "url": "https://youtube.com/shorts/uM2b9fH1azk",
+          "title": "Présentation des locaux",
+          "client": "HBFS Training"
+        }
+      ],
+      "visuels": [],
+      "captures": []
+    },
+    {
+      "type": "projets",
+      "id": "visuels",
+      "menu": "Visuels",
+      "visible": true,
+      "label": "Visuels",
+      "title": "Des visuels pensés pour arrêter le pouce.",
+      "visuels_title": "Visuels réalisés",
+      "videos": [],
+      "visuels": [
+        {
+          "image": "/images/uploads/visuel-hbfs-formation-cuisine.webp",
+          "title": "Formation cuisine",
+          "client": "HBFS Training",
+          "alt": "Visuel « Formation cuisine » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-hbfs-interim-hospitality.webp",
+          "title": "Intérim Hospitality",
+          "client": "HBFS Training",
+          "alt": "Visuel « Intérim Hospitality » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-hbfs-cocktails-vrai-faux.webp",
+          "title": "Vrai ou faux ? Édition cocktails",
+          "client": "HBFS Training",
+          "alt": "Visuel « Vrai ou faux ? Édition cocktails » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-hbfs-temoignage.webp",
+          "title": "Témoignage d'apprenante",
+          "client": "HBFS Training",
+          "alt": "Visuel « Témoignage d'apprenante » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-hbfs-location-salles.webp",
+          "title": "Location de salles",
+          "client": "HBFS Training",
+          "alt": "Visuel « Location de salles » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-hbfs-cocktail-personnalite.webp",
+          "title": "1 cocktail = 1 personnalité",
+          "client": "HBFS Training",
+          "alt": "Visuel « 1 cocktail = 1 personnalité » réalisé pour HBFS Training"
+        },
+        {
+          "image": "/images/uploads/visuel-ivory-villa-mondoukou.webp",
+          "title": "Villa en bord de mer à Mondoukou",
+          "client": "The Ivory Collection",
+          "alt": "Visuel « Villa en bord de mer à Mondoukou » réalisé pour The Ivory Collection"
+        },
+        {
+          "image": "/images/uploads/visuel-ivory-moments.webp",
+          "title": "For moments like these",
+          "client": "The Ivory Collection",
+          "alt": "Visuel « For moments like these » réalisé pour The Ivory Collection"
+        },
+        {
+          "image": "/images/uploads/visuel-ivory-villa-interieur.webp",
+          "title": "Villa : extérieur et salon",
+          "client": "The Ivory Collection",
+          "alt": "Visuel « Villa : extérieur et salon » réalisé pour The Ivory Collection"
+        },
+        {
+          "image": "/images/uploads/visuel-ivory-villa-piscine.webp",
+          "title": "Villa avec piscine",
+          "client": "The Ivory Collection",
+          "alt": "Visuel « Villa avec piscine » réalisé pour The Ivory Collection"
+        },
+        {
+          "image": "/images/uploads/visuel-laroq-habs-body-training.webp",
+          "title": "Push yourself",
+          "client": "LAROQ × Habs Body Training",
+          "alt": "Visuel « Push yourself » réalisé pour LAROQ × Habs Body Training"
+        }
+      ],
+      "captures": []
+    },
+    {
+      "type": "projets",
+      "id": "projets",
+      "menu": "Pages gérées",
+      "visible": true,
+      "label": "Pages gérées",
       "title": "Des contenus où vos clients se reconnaissent.",
       "note": "Les résultats affichés sont publiés avec l'accord des clients et leurs vrais chiffres.",
       "videos_title": "Vidéos",
@@ -394,11 +536,6 @@
         {
           "name": "Coupe des écoles hôtelières",
           "image": "/images/uploads/logo-coupe-ecoles-hotelieres.jpg",
-          "link": ""
-        },
-        {
-          "name": "Journée entrepreneuriale",
-          "image": "",
           "link": ""
         }
       ],
