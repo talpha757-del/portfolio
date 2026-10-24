@@ -1,0 +1,349 @@
+# Espace admin du portfolio (Decap CMS)
+# Dépôt GitHub du site : talpha757-del/portfolio
+backend:
+  name: github
+  repo: talpha757-del/portfolio
+  branch: main
+  commit_messages:
+    update: "Mise à jour du contenu du site"
+    uploadMedia: "Ajout d'une image : {{path}}"
+
+# Pour tester sur ton ordinateur (npx decap-server) : laisse cette ligne, elle n'a aucun effet en ligne.
+local_backend: true
+
+locale: fr
+site_url: /
+display_url: /
+logo_url: /images/logo-fond-clair.svg
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site
+    label: Mon site
+    editor:
+      preview: false
+    files:
+      - name: contenu
+        label: Contenu du site
+        file: content/site.json
+        format: json
+        fields:
+          - label: Réglages généraux
+            name: settings
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Titre de l'onglet (Google)", name: page_title, widget: string }
+              - { label: "Description (Google et partages)", name: description, widget: text }
+              - { label: "Ton nom (en-tête et pied de page)", name: name, widget: string }
+              - { label: "Sous-titre sous ton nom", name: tagline, widget: string, required: false }
+              - { label: "Bouton du menu : texte", name: nav_cta_label, widget: string, required: false }
+              - { label: "Bouton du menu : lien", name: nav_cta_link, widget: string, required: false, hint: "Ex. #contact" }
+              - { label: "Phrase du pied de page", name: footer_text, widget: string, required: false }
+
+          - label: Sections de la page
+            name: sections
+            widget: list
+            hint: "Glisse les sections pour changer l'ordre. Décoche « Visible » pour masquer une section sans perdre son contenu. « Ajouter » permet de créer une nouvelle section."
+            add_to_top: false
+            collapsed: true
+            typeKey: type
+            summary: "{{fields.menu}} {{fields.title}}"
+            types:
+              # ---------- Accueil ----------
+              - label: Accueil (en-tête)
+                name: hero
+                widget: object
+                summary: "Accueil · {{fields.title}}"
+                fields:
+                  - &visible { label: Visible sur le site, name: visible, widget: boolean, default: true }
+                  - &id { label: "Identifiant (pour les liens, sans espace)", name: id, widget: string, required: false, hint: "Ex. accueil. Les liens du type #accueil y mènent." }
+                  - &menu { label: "Nom dans le menu", name: menu, widget: string, required: false, hint: "Laisse vide pour ne pas l'afficher dans le menu." }
+                  - &label { label: Surtitre, name: label, widget: string, required: false }
+                  - { label: Titre, name: title, widget: string }
+                  - &highlight { label: "Mot du titre en couleur", name: highlight, widget: string, required: false, hint: "Recopie exactement un mot du titre." }
+                  - { label: Texte, name: text, widget: text, required: false }
+                  - { label: Photo, name: photo, widget: image, required: false }
+                  - { label: "Description de la photo (accessibilité)", name: photo_alt, widget: string, required: false }
+                  - { label: "Bouton 1 : texte", name: button1_label, widget: string, required: false }
+                  - { label: "Bouton 1 : lien", name: button1_link, widget: string, required: false }
+                  - { label: "Bouton 2 : texte", name: button2_label, widget: string, required: false }
+                  - { label: "Bouton 2 : lien", name: button2_link, widget: string, required: false }
+
+              # ---------- Vidéo phare ----------
+              - label: Vidéo mise en avant
+                name: video
+                widget: object
+                summary: "Vidéo · {{fields.caption}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - { label: Lien de la vidéo, name: url, widget: string, hint: "Colle le lien YouTube (vidéo ou Short). La vidéo peut être « non répertoriée », pas « privée »." }
+                  - &format { label: Format, name: format, widget: select, default: auto, options: [ { label: "Automatique (Short = vertical)", value: auto }, { label: "Vertical 9:16", value: vertical }, { label: "Horizontal 16:9", value: horizontal } ] }
+                  - { label: "Lecture automatique (sans le son)", name: autoplay, widget: boolean, default: true }
+                  - { label: Légende, name: caption, widget: string, required: false }
+
+              # ---------- À propos ----------
+              - label: À propos
+                name: apropos
+                widget: object
+                summary: "À propos · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string }
+                  - *highlight
+                  - { label: "Texte (une ligne vide = nouveau paragraphe)", name: text, widget: text, required: false }
+                  - { label: Valeurs, name: values, widget: list, required: false, summary: "{{fields.title}}", fields: [ { label: Titre, name: title, widget: string }, { label: Texte, name: text, widget: string, required: false } ] }
+                  - { label: "Titre « Formation »", name: formation_title, widget: string, required: false }
+                  - { label: Formation, name: formation, widget: list, required: false, summary: "{{fields.year}} · {{fields.text}}", fields: [ { label: Année, name: year, widget: string }, { label: Diplôme ou formation, name: text, widget: string } ] }
+                  - { label: "Titre « Outils »", name: tools_title, widget: string, required: false }
+                  - { label: Outils, name: tools, widget: list, required: false, summary: "{{fields.name}}", fields: [ { label: Nom, name: name, widget: string } ] }
+                  - { label: "Titre « Langues »", name: languages_title, widget: string, required: false }
+                  - { label: Langues, name: languages, widget: string, required: false }
+
+              # ---------- Expériences ----------
+              - label: Expériences
+                name: experiences
+                widget: object
+                summary: "Expériences · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - { label: "Nombre affiché avant « Voir plus »", name: initial, widget: number, default: 4, value_type: int, min: 1 }
+                  - label: Expériences
+                    name: items
+                    widget: list
+                    summary: "{{fields.period}} · {{fields.role}} · {{fields.company}}"
+                    hint: "Mets les plus récentes en haut."
+                    fields:
+                      - { label: "En cours", name: current, widget: boolean, default: false }
+                      - { label: "Période", name: period, widget: string, hint: "Ex. 2025 – 2026, ou Depuis mars 2026" }
+                      - { label: "Catégorie (sert aux filtres)", name: category, widget: string, required: false, hint: "Ex. Community management, Contenu et vidéo, Événementiel, Stratégie digitale" }
+                      - { label: Poste, name: role, widget: string }
+                      - { label: "Entreprise ou client", name: company, widget: string, required: false }
+                      - { label: "Ce que tu as fait", name: points, widget: list, required: false, summary: "{{fields.text}}", fields: [ { label: Point, name: text, widget: string } ] }
+                      - { label: "Texte libre (facultatif)", name: description, widget: text, required: false }
+
+              # ---------- Projets ----------
+              - label: Projets (vidéos, visuels, captures)
+                name: projets
+                widget: object
+                summary: "Projets · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - { label: "Titre du groupe Vidéos", name: videos_title, widget: string, default: "Vidéos" }
+                  - label: Vidéos
+                    name: videos
+                    widget: list
+                    required: false
+                    summary: "{{fields.title}} · {{fields.client}}"
+                    fields:
+                      - { label: Lien de la vidéo, name: url, widget: string, hint: "Lien YouTube (vidéo ou Short). Mets la vidéo en « non répertoriée » ou publique, pas « privée »." }
+                      - *format
+                      - { label: Titre, name: title, widget: string, required: false }
+                      - { label: Client, name: client, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                  - { label: "Titre du groupe Visuels", name: visuels_title, widget: string, default: "Visuels" }
+                  - label: Visuels
+                    name: visuels
+                    widget: list
+                    required: false
+                    summary: "{{fields.title}} · {{fields.client}}"
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: Titre, name: title, widget: string, required: false }
+                      - { label: Client, name: client, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                      - { label: "Description de l'image (accessibilité)", name: alt, widget: string, required: false }
+                  - { label: "Titre du groupe Captures", name: captures_title, widget: string, default: "Captures d'écran" }
+                  - label: Captures d'écran
+                    name: captures
+                    widget: list
+                    required: false
+                    summary: "{{fields.title}} · {{fields.client}}"
+                    fields:
+                      - { label: Capture, name: image, widget: image }
+                      - { label: Titre, name: title, widget: string, required: false }
+                      - { label: "Page ou client", name: client, widget: string, required: false }
+                      - label: Points clés (sous la capture)
+                        name: points
+                        widget: list
+                        required: false
+                        summary: "{{fields.label}} : {{fields.value}}"
+                        hint: "Le premier point s'affiche en grand. Ex. Abonnés gagnés : +2 500"
+                        fields:
+                          - { label: Intitulé, name: label, widget: string }
+                          - { label: Valeur, name: value, widget: string }
+                      - { label: Commentaire, name: comment, widget: text, required: false }
+                      - { label: "Description de l'image (accessibilité)", name: alt, widget: string, required: false }
+                  - { label: "Phrase sous les projets", name: note, widget: string, required: false }
+
+              # ---------- Références ----------
+              - label: Références (ils m'ont fait confiance)
+                name: references
+                widget: object
+                summary: "Références · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - label: Logos des clients
+                    name: logos
+                    widget: list
+                    required: false
+                    summary: "{{fields.name}}"
+                    fields:
+                      - { label: Nom, name: name, widget: string }
+                      - { label: "Logo (sinon le nom s'affiche)", name: image, widget: image, required: false }
+                      - { label: Lien, name: link, widget: string, required: false }
+                  - { label: "Titre « Pages gérées »", name: pages_title, widget: string, required: false }
+                  - label: Pages gérées
+                    name: pages
+                    widget: list
+                    required: false
+                    summary: "{{fields.name}}"
+                    fields:
+                      - { label: Nom de la page, name: name, widget: string }
+                      - { label: Logo, name: logo, widget: image, required: false }
+                      - { label: Période, name: period, widget: string, required: false }
+                      - { label: Ce que tu as fait, name: description, widget: text, required: false }
+                      - { label: Réseaux, name: networks, widget: list, required: false, summary: "{{fields.name}}", fields: [ { label: Réseau, name: name, widget: string } ] }
+                      - { label: Lien de la page, name: link, widget: string, required: false }
+
+              # ---------- Cartes (services, offres...) ----------
+              - label: Cartes (services, offres, valeurs)
+                name: cartes
+                widget: object
+                summary: "Cartes · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - label: Cartes
+                    name: items
+                    widget: list
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: Icône, name: icon, widget: select, default: star, options: [ { label: Message, value: message }, { label: Vidéo, value: video }, { label: Cible, value: target }, { label: Calendrier, value: calendar }, { label: Loupe, value: search }, { label: Graphique, value: chart }, { label: Personnes, value: users }, { label: Stylo, value: pen }, { label: Appareil photo, value: camera }, { label: Mégaphone, value: megaphone }, { label: Étoile, value: star }, { label: Aucune, value: aucune } ] }
+                      - { label: Titre, name: title, widget: string }
+                      - { label: Texte, name: text, widget: text, required: false }
+
+              # ---------- Texte libre ----------
+              - label: Texte libre
+                name: texte
+                widget: object
+                summary: "Texte · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - *highlight
+                  - { label: "Texte (une ligne vide = nouveau paragraphe)", name: text, widget: text, required: false }
+                  - { label: "Bouton : texte", name: button_label, widget: string, required: false }
+                  - { label: "Bouton : lien", name: button_link, widget: string, required: false }
+                  - { label: Fond sombre, name: dark, widget: boolean, default: false }
+
+              # ---------- Texte + image ----------
+              - label: Texte et image
+                name: texte_image
+                widget: object
+                summary: "Texte et image · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - *highlight
+                  - { label: "Texte (une ligne vide = nouveau paragraphe)", name: text, widget: text, required: false }
+                  - { label: Image, name: image, widget: image, required: false }
+                  - { label: "Description de l'image", name: image_alt, widget: string, required: false }
+                  - { label: "Image à gauche", name: reverse, widget: boolean, default: false }
+                  - { label: "Bouton : texte", name: button_label, widget: string, required: false }
+                  - { label: "Bouton : lien", name: button_link, widget: string, required: false }
+
+              # ---------- Témoignages ----------
+              - label: Témoignages
+                name: temoignages
+                widget: object
+                summary: "Témoignages · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string, required: false }
+                  - label: Témoignages
+                    name: items
+                    widget: list
+                    summary: "{{fields.name}}"
+                    hint: "Uniquement de vrais avis, avec l'accord de la personne."
+                    fields:
+                      - { label: Citation, name: quote, widget: text }
+                      - { label: Nom, name: name, widget: string }
+                      - { label: "Fonction, entreprise", name: role, widget: string, required: false }
+
+              # ---------- Appel à l'action ----------
+              - label: Appel à l'action (phrase + bouton)
+                name: cta
+                widget: object
+                summary: "Appel à l'action · {{fields.title}}"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string }
+                  - *highlight
+                  - { label: Texte, name: text, widget: text, required: false }
+                  - { label: "Bouton : texte", name: button_label, widget: string, required: false }
+                  - { label: "Bouton : lien", name: button_link, widget: string, required: false }
+                  - { label: Fond sombre, name: dark, widget: boolean, default: true }
+
+              # ---------- Contact ----------
+              - label: Contact
+                name: contact
+                widget: object
+                summary: "Contact"
+                fields:
+                  - *visible
+                  - *id
+                  - *menu
+                  - *label
+                  - { label: Titre, name: title, widget: string }
+                  - *highlight
+                  - { label: Texte, name: text, widget: text, required: false }
+                  - { label: E-mail, name: email, widget: string, required: false }
+                  - { label: Téléphone, name: phone, widget: string, required: false }
+                  - { label: "WhatsApp (numéro avec indicatif, sans + ni espace)", name: whatsapp, widget: string, required: false, hint: "Ex. 2250142220269" }
+                  - { label: "Bouton e-mail : texte", name: button_label, widget: string, required: false }
+                  - { label: "Bouton WhatsApp : texte", name: whatsapp_label, widget: string, required: false }
+                  - label: Réseaux sociaux
+                    name: socials
+                    widget: list
+                    required: false
+                    summary: "{{fields.name}}"
+                    fields:
+                      - { label: "Nom (Instagram, LinkedIn…)", name: name, widget: string }
+                      - { label: Lien, name: url, widget: string }
+                      - { label: "Texte affiché (ex. @alpha)", name: display, widget: string, required: false }
